@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loan Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <style>
+    .loader {
+      width: 100px;
+      height: 100px;
+    }
+
+    .btn {
+      cursor: pointer;
+    }
+
+    .img-loading,
+    .results,
+    #loader {
+      display: none;
+    }
+
+    #loader,
+    .img-loading {
+      width: 100px;
+      height: 100px;
+      margin: 5px auto 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body text-center mt-5">
+          <h1 class="heading display-5 p-3">Loan Calculator</h1>
+          <form id="loan-form">
+            <div class="form-group px-3">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+              </div>
+            </div>
+            <div class="form-group px-3">
+              <div class="input-group">
+                <span class="input-group-addon">%</span>
+                <input type="number" class="form-control" id="interest" placeholder="Interest">
+              </div>
+            </div>
+            <div class="form-group px-3">
+              <input type="number" class="form-control" id="years" placeholder="Years to Repay">
+            </div>
+            <div class="form-group px-3">
+              <input type="submit" class="btn btn-info btn-block" value="Calculate">
+            </div>
+          </form>
+          <!-- Loader -->
+          <div id="loader" class="loader py-2">
+            <img src="img/loading.gif" alt="loader" class="img-loading" id="img-loading">
+          </div>
+          <!-- Results -->
+          <div id="results" class="results py-4">
+            <h5>Results</h5>
+            <div class="form-group px-3">
+              <div class="input-group">
+                <span class="input-group-addon">Monthly Payment</span>
+                <input type="number" class="form-control" id="monthly-payment" disabled>
+              </div>
+            </div>
+
+            <div class="form-group px-3">
+              <div class="input-group">
+                <span class="input-group-addon">Total Payment</span>
+                <input type="number" class="form-control" id="total-payment" disabled>
+              </div>
+            </div>
+            <div class="form-group px-3">
+              <div class="input-group">
+                <span class="input-group-addon">Total Interest</span>
+                <input type="number" class="form-control" id="total-interest" disabled>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Results -->
+      </div>
+    </div>
+  </div>
+  <!-- Script -->
+  <script src="main.js"></script>
+</body>
+</html>
